@@ -1,0 +1,35 @@
+{
+  "name": "acme-user-departments",
+  "version": "1.0.0",
+  "description": "A backend-only api to track Acme Users and the Departments they're associated with.",
+  "main": "server.js",
+  "scripts": {
+    "test": "npm test",
+    "start": "node main.js",
+    "start-dev": "nodemon main.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/wallacepreston/acme-user-departments.git"
+  },
+  "keywords": [
+    "objection",
+    "knex",
+    "api",
+    "backend"
+  ],
+  "author": "Preston Wallace",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/wallacepreston/acme-user-departments/issues"
+  },
+  "homepage": "https://github.com/wallacepreston/acme-user-departments#readme",
+  "dependencies": {
+    "cors": "^2.8.5",
+    "express": "^4.17.1",
+    "knex": "^0.18.1",
+    "morgan": "^1.9.1",
+    "objection": "^1.6.9",
+    "pg": "^7.11.0"
+  }
+}
