@@ -3,7 +3,7 @@ const app = express();
 const path = require('path');
 const morgan = require('morgan');
 
-app.use(morgan)
+app.use(morgan('default'))
 
 // Set up Body Parsing middleware for urlencoded form data.
 app.use(express.urlencoded({ extended: true }))
