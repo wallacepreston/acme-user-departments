@@ -1,11 +1,12 @@
-const { Model } = require('objection');
-const Knex = require('knex');
+const { knex, Model } = require('./Model');
+const Department = require('./models/Department');
+const User = require('./models/User');
 
-// Initialize knex.
-const knex = Knex({
-  client: 'pg',
-  useNullAsDefault: true,
-  connection: 'acme-user-departments'
-});
-
-Model.knex(knex);
+module.exports = {
+  knex,
+  Model,
+  models: {
+    Department,
+    User,
+  },
+}

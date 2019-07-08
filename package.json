@@ -6,7 +6,9 @@
   "scripts": {
     "test": "npm test",
     "start": "node main.js",
-    "start-dev": "nodemon main.js"
+    "start-dev": "npm run migrate && nodemon main.js",
+    "migrate": "knex migrate:latest",
+    "seed": "node server/db/seed"
   },
   "repository": {
     "type": "git",
