@@ -5,7 +5,7 @@ const db = require('../db')
 
 router.get('/', async (req, res, next) => {
   try {
-    const departments = await db.models.Department.query()
+    const departments = await db.models.Department.query().eager('users');
     if(!departments) {
       next(new Error('No Departments found!'))
     }

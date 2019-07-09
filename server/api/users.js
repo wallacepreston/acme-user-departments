@@ -5,7 +5,7 @@ const db = require('../db')
 
 router.get('/', async (req, res, next) => {
   try {
-    const users = await db.models.User.query()
+    const users = await db.models.User.query().eager('department')
     if(!users) {
       next(new Error('No Users found!'))
     }
@@ -20,7 +20,8 @@ router.get('/:id', async (req, res, next) => {
     const user = await db.models.User
       .query()
       .findById(req.params.id)
-      // .eager('departments');
+      .eager('department')
+      // .join('departments', 'users.departmentId', 'departments.id')
     console.log(user);
     res.send(user);
   } catch (err) {

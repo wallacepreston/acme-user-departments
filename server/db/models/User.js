@@ -1,5 +1,4 @@
 const { Model } = require('../Model')
-const Department = require('./Department')
 
 class User extends Model {
   static get tableName() {
@@ -10,7 +9,7 @@ class User extends Model {
     return {
       department: {
         relation: Model.BelongsToOneRelation,
-        modelClass: Department,
+        modelClass: require('./Department'),
         join: {
           from: 'users.departmentId',
           to: 'departments.id'
